@@ -1,6 +1,203 @@
-header {
-    background-color: #3f8cd8;
-    padding: 1rem;
+﻿header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  color: #666;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0;
+  text-align: center;
+}
+
+h2 {
+  color: #666;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Team Information Styles */
+.team-info-section {
+  margin-bottom: 3rem;
+}
+
+.team-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-image {
+  flex-shrink: 0;
+}
+
+.team-image img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.team-details {
+  flex: 1;
+}
+
+.team-details h3 {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 0 0 15px 0;
+}
+
+.team-description {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.team-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  gap: 10px;
+}
+
+.info-item strong {
+  color: #3f51b5;
+  min-width: 80px;
+  font-weight: 600;
+}
+
+.info-item span {
+  color: #666;
+  flex: 1;
+}
+
+/* Selected Heroes Section */
+.selected-heroes-section {
+  margin-bottom: 2rem;
+}
+
+.select-heroes-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.select-heroes-btn:hover {
+  background-color: #5a6268;
+}
+
+@media (max-width: 768px) {
+  .team-container {
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: white;
+  }
+  
+  .team-image img {
+    width: 150px;
+  }
+  
+  .top-heroes-container {
+    gap: 8px;
+    padding: 0 10px;
+  }
+  
+  .top-hero-btn {
+    padding: 12px 8px;
+    font-size: 12px;
+    min-width: 70px;
+    max-width: 90px;
+  }
+}
+
+.top-heroes-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.top-hero-btn {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  max-width: 160px;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.top-hero-btn:hover {
+  background-color: #303f9f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.top-hero-btn:active {
+  background-color: #1a237e;
+  transform: translateY(0);
+}
+
+.no-heroes-message {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.no-heroes-message p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.no-heroes-message a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.no-heroes-message a:hover {
+  text-decoration: underline;
+  color: #303f9f;
+}
+
+/* Estilos para las acciones */
+.actions {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-top: 30px;
 }

@@ -1,7 +1,59 @@
 <header>
-  <h1>Home Page</h1>
+  <h1>Check Your Heroes!</h1>
 </header>
 
 <main>
+  <section class="team-info-section" *ngIf="teamInfo">
+    <h2>About The Team</h2>
+    <div class="team-container">
+      <div class="team-image" *ngIf="teamInfo.image">
+        <img [src]="teamInfo.image" [alt]="teamInfo.name" />
+      </div>
+      <div class="team-details">
+        <h3>{{ teamInfo.name }}</h3>
+        <p class="team-description">{{ teamInfo.description }}</p>
+        
+        <div class="team-info-grid">
+          <div class="info-item">
+            <strong>Base:</strong>
+            <span>{{ teamInfo.base }}</span>
+          </div>
+          
+          <div class="info-item" *ngIf="teamInfo.allies && teamInfo.allies.length > 0">
+            <strong>Allies:</strong>
+            <span>{{ teamInfo.allies.join(', ') }}</span>
+          </div>
+          
+          <div class="info-item" *ngIf="teamInfo.enemies && teamInfo.enemies.length > 0">
+            <strong>Enemies:</strong>
+            <span>{{ teamInfo.enemies.join(', ') }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="selected-heroes-section">
+    <h2>Your Selected Heroes</h2>
     
+    <div class="top-heroes-container" *ngIf="getTop4SelectedHeroes().length > 0">
+      <button 
+        class="top-hero-btn"
+        *ngFor="let hero of getTop4SelectedHeroes()"
+        (click)="goToHeroDetail(hero.id)">
+        {{ hero.name }}
+      </button>
+    </div>
+
+    <div *ngIf="getSelectedHeroes().length === 0" class="no-heroes-message">
+      <p>No heroes selected yet!</p>
+      <p>Use the button below to choose your favorite heroes.</p>
+    </div>
+    
+    <div class="actions">
+      <button class="select-heroes-btn" (click)="goToHeroesPage()">
+        Select Heroes
+      </button>
+    </div>
+  </section>
 </main>

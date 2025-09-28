@@ -1,0 +1,109 @@
+{
+  "series": {
+    "name": "Runaways",
+    "publisher": "Marvel Comics",
+    "creators": ["Brian K. Vaughan", "Adrian Alphona"],
+    "firstAppearance": "Runaways #1 (July 2003)",
+    "description": "A group of teenagers who discover that their parents are part of an evil crime organization called 'The Pride'"
+  },
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Alex Wilder",
+      "nickname": "Unkown",
+      "image": "/alexwilder.jpg",
+      "powers": ["Strategic genius", "Leadership", "No superhuman abilities"],
+      "parents": "Geoffrey and Catherine Wilder (The Pride)",
+      "description": "The de facto leader of the original Runaways. Son of crime bosses, he's a tactical genius but harbors dark secrets.",
+      "status": "Deceased (later resurrected)",
+      "firstAppearance": "Runaways #1 (2003)"
+    },
+    {
+      "id": 2,
+      "name": "Nico Minoru",
+      "nickname": "Sister Grimm / The Gloom",
+      "image": "/nicominoru.jpg",
+      "powers": ["Dark magic", "Staff of One wielder", "Spell casting"],
+      "parents": "Robert and Tina Minoru (Dark wizards)",
+      "description": "A Japanese-American witch who wields the Staff of One, a powerful magical artifact that prevents her from casting the same spell twice.",
+      "status": "Active",
+      "firstAppearance": "Runaways #1 (2003)"
+    },
+    {
+      "id": 3,
+      "name": "Chase Stein",
+      "nickname": "Talkback / Gun Arm / Neo / Darkhawk / Chasehawk",
+      "image": "/chasestein.jpg",
+      "powers": ["Mechanical genius", "Fistigons (flame-projecting gauntlets)", "Engineering skills"],
+      "parents": "Victor and Janet Stein (Mad scientists)",
+      "description": "The team's resident tough guy and mechanic. Son of time-traveling scientists, he wears flame-projecting gauntlets called Fistigons.",
+      "status": "Active",
+      "firstAppearance": "Runaways #1 (2003)"
+    },
+    {
+      "id": 4,
+      "name": "Gertrude Yorkes",
+      "nickname": "Arsenic",
+      "image": "/gertrudeyorkes.jpg",
+      "powers": ["Telepathic link with Old Lace", "Time travel knowledge", "Strategic thinking"],
+      "parents": "Dale and Stacey Yorkes (Time travelers)",
+      "description": "A sarcastic, intelligent girl with a telepathic bond to a genetically-engineered deinonychus from the future named Old Lace.",
+      "status": "Deceased",
+      "firstAppearance": "Runaways #1 (2003)"
+    },
+    {
+      "id": 5,
+      "name": "Molly Hayes",
+      "nickname": "Princess Powerful / Blue-J / Bruiser",
+      "image": "/mollyhayes.jpg",
+      "powers": ["Superhuman strength", "Invulnerability", "Enhanced durability"],
+      "parents": "Gene and Alice Hayes (Mutants)",
+      "description": "The youngest member of the team with incredible super strength. Her powers cause her to become tired and need naps after use.",
+      "status": "Active",
+      "firstAppearance": "Runaways #1 (2003)"
+    },
+    {
+      "id": 6,
+      "name": "Victor Mancha",
+      "nickname": "Victorious / Kid Justice",
+      "image": "/victormancha.jpg",
+      "powers": ["Electromagnetic manipulation", "Electronic interfacing", "Cybernetic enhancements"],
+      "parents": "Marianella Mancha (mother), Ultron (creator/father)",
+      "description": "A cyborg created by Ultron to infiltrate and destroy the Avengers. He later joins the Runaways and struggles with his dark origins.",
+      "status": "Active",
+      "firstAppearance": "Runaways #1 (2005, Volume 2)"
+    },
+    {
+      "id": 7,
+      "name": "Karolina Dean",
+      "nickname": "Lucy in the Sky / Princess Justice",
+      "image": "/karolinadean.jpg",
+      "powers": ["Solar energy manipulation", "Flight", "Light projection", "Energy absorption"],
+      "parents": "Frank and Leslie Dean (Majesdanians - aliens)",
+      "description": "An alien Majesdanian with the ability to manipulate solar energy and light. She can fly and project powerful energy blasts.",
+      "status": "Active",
+      "firstAppearance": "Runaways #1 (2003)"
+    },
+    {
+      "id": 8,
+      "name": "Compasión",
+      "nickname": "Unknown",
+      "image": "/compasion.jpg",
+      "powers": ["Empathic abilities", "Emotional manipulation", "Healing presence"],
+      "parents": "Unknown origin",
+      "description": "A mysterious character with empathic abilities who can sense and influence emotions. Details about their background remain largely unknown.",
+      "status": "Unknown",
+      "firstAppearance": "Runaways #2 (2003)"
+    }
+  ],
+  "team": [
+    {
+      "name": "The Runaways",
+      "description": "Teenage superhero team formed after discovering their parents' villainous activities",
+      "base": "The Hostel (various locations in Los Angeles)",
+      "allies": ["Cloak and Dagger", "Young Avengers", "Spider-Man"],
+      "enemies": ["The Pride", "Ultron"],
+      "image": "/runaways.jpg"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<!-- Estado de carga -->
+<div class="loading" *ngIf="isLoading">
+  <h2>Loading hero information...</h2>
+</div>
+
+<!-- Información del héroe -->
+<div class="hero-detail" *ngIf="!isLoading && hero && !notFound">
+  <header>
+    <h1>{{ hero.name | uppercase }}</h1>
+    <h2 class="nickname" *ngIf="hero.nickname">{{ hero.nickname }}</h2>
+  </header>
+  
+  <main>
+    <div class="hero-content">
+      <div class="hero-image" *ngIf="hero.image">
+        <img [src]="hero.image" [alt]="hero.name" />
+      </div>
+      
+      <div class="hero-info">
+        <div class="info-section">
+          <label>ID:</label>
+          <span>{{ hero.id }}</span>
+        </div>
+        
+        <div class="info-section" *ngIf="hero.status">
+          <label>Status:</label>
+          <span class="status" [ngClass]="hero.status.toLowerCase()">{{ hero.status }}</span>
+        </div>
+        
+        <div class="info-section" *ngIf="hero.parents">
+          <label>Parents:</label>
+          <span>{{ hero.parents }}</span>
+        </div>
+        
+        <div class="info-section" *ngIf="hero.firstAppearance">
+          <label>First Appearance:</label>
+          <span>{{ hero.firstAppearance }}</span>
+        </div>
+        
+        <div class="info-section" *ngIf="hero.powers && hero.powers.length > 0">
+          <label>Powers:</label>
+          <ul class="powers-list">
+            <li *ngFor="let power of hero.powers">{{ power }}</li>
+          </ul>
+        </div>
+        
+        <div class="info-section description" *ngIf="hero.description">
+          <label>Description:</label>
+          <p>{{ hero.description }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button class="back-btn" (click)="goBack()">
+        ← Back
+      </button>
+    </div>
+  </main>
+</div>
+
+
+<div class="hero-not-found" *ngIf="!isLoading && notFound">
+  <h1>Hero Not Found</h1>
+  <p>The hero you're looking for doesn't exist.</p>
+  <button class="back-btn" (click)="goBack()">
+    ← Back to Heroes
+  </button>
+</div>

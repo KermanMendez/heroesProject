@@ -1,0 +1,25 @@
+<header>
+    <h1>Heroes Page: Select your heroes!</h1>
+</header>
+
+<main>
+    <section class="all-heroes-section">
+        <h2>My Heroes</h2>
+        <div class="heroes-container">
+            <div class="hero-item" 
+                 *ngFor="let hero of heroes" 
+                 [class.selected]="isSelected(hero.id)"
+                 (click)="toggleHero(hero.id)">
+                <div class="hero-number">{{ hero.id }}</div>
+                <div class="hero-name">{{ hero.name }}</div>
+                <div class="hero-delete">×</div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button class="back-btn" (click)="goToHome()">
+                ← Back to Home
+            </button>
+        </div>
+    </section>
+</main>
