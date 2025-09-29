@@ -7,6 +7,6 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'heroes', component: HeroesPageComponent },
-    { path: 'hero/:id', component: HeroPageComponent }
-
+    { path: 'hero/:id', component: HeroPageComponent },
+    { path: '**', redirectTo: 'home' } // Para que nos redirija a home en caso de ruta no encontrada
 ];
