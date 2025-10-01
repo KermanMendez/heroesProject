@@ -3,7 +3,6 @@
   <h2>Loading hero information...</h2>
 </div>
 
-<!-- Información del héroe -->
 <div class="hero-detail" *ngIf="!isLoading && hero && !notFound">
   <header>
     <h1>{{ hero.name | uppercase }}</h1>
@@ -52,9 +51,9 @@
     </div>
     
     <div class="actions">
-      <button class="back-btn" (click)="goBack()">
-        ← Back
-      </button>
+            <a routerLink="/home" class="back-btn">
+                ← Back to Heroes
+            </a>
     </div>
   </main>
 </div>
@@ -63,7 +62,7 @@
 <div class="hero-not-found" *ngIf="!isLoading && notFound">
   <h1>Hero Not Found</h1>
   <p>The hero you're looking for doesn't exist.</p>
-  <button class="back-btn" (click)="goBack()">
-    ← Back to Heroes
-  </button>
+            <a routerLink="/home" class="back-btn">
+                ← Back to Heroes
+            </a>
 </div>

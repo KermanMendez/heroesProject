@@ -1,7 +1,3 @@
-<header>
-  <h1>Check Your Heroes!</h1>
-</header>
-
 <main>
   <section class="team-info-section" *ngIf="teamInfo">
     <h2>About The Team</h2>
@@ -51,9 +47,9 @@
     </div>
     
     <div class="actions">
-      <button class="select-heroes-btn" (click)="goToHeroesPage()">
-        Select Heroes
-      </button>
+      <a routerLink="/heroes" class="back-btn">
+       Select Heroes
+      </a>
     </div>
   </section>
 </main>

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero, HeroSelection } from '../hero';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-heroes-page',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './heroes-page.component.html',
   styleUrl: './heroes-page.component.css'
 })
@@ -23,8 +23,17 @@ export class HeroesPageComponent implements OnInit {
   ];
 
   selectedHeroes: Set<number> = new Set();
+  showPopup: boolean = false;
+  heroForm: FormGroup;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private formBuilder: FormBuilder) {
+    // Este constructor es necesario para el FormBuilder
+    this.heroForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      nickname: ['', [Validators.required, Validators.minLength(2)]],
+      power: ['', [Validators.required, Validators.minLength(2)]],
+    });
+  }
 
   ngOnInit(): void {
     // Cargar héroes seleccionados del sessionStorage
@@ -64,7 +73,27 @@ export class HeroesPageComponent implements OnInit {
     this.router.navigate(['/hero', heroId]);
   }
 
-  goToHome(): void {
-    this.router.navigate(['/']);
+
+  addHero(): void {
+    this.showPopup = true;
+  }
+
+  closePopup(): void {
+    this.showPopup = false;
+    this.heroForm.reset();
+  }
+
+  onSubmitHero(): void {
+    if (this.heroForm.valid) {
+      const newId = this.heroes.length + 1;
+      const newHero: Hero = { 
+        id: newId, 
+        name: this.heroForm.get('name')?.value,
+        nickname: this.heroForm.get('nickname')?.value,
+        powers: this.heroForm.get('power')?.value
+      };
+      this.heroes.push(newHero);
+      this.closePopup();
+    }
   }
 }

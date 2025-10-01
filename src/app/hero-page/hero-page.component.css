@@ -11,6 +11,7 @@
   animation: pulse 1.5s infinite;
 }
 
+/* Animación para el "loading" en caso de que se pince la carga */
 @keyframes pulse {
   0%, 100% { opacity: 0.6; }
   50% { opacity: 1; }

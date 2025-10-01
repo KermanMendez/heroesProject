@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Hero } from '../hero';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-hero-page',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './hero-page.component.html',
   styleUrl: './hero-page.component.css'
 })
@@ -17,7 +18,6 @@ export class HeroPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private http: HttpClient
   ) {}
 
@@ -37,14 +37,10 @@ export class HeroPageComponent implements OnInit {
         this.notFound = !this.hero; // Si no encuentra el héroe, marca como not found
       },
       error: (error) => {
-        console.error('Error loading hero data:', error);
+        // console.error('Error loading hero data:', error);
         this.isLoading = false;
         this.notFound = true;
       }
     });
-  }
-
-  goBack(): void {
-    this.router.navigate(['/']);
   }
 }

@@ -1,8 +1,4 @@
-﻿header {
-  margin-bottom: 2rem;
-}
-
-h1 {
+﻿h1 {
 
   font-size: 2.5rem;
   font-weight: 300;
@@ -133,7 +129,7 @@ h2 {
   flex-wrap: nowrap;
   justify-content: center;
   gap: 12px;
-  max-width: 800px;
+
   margin: 0 auto;
   overflow-x: auto;
 }
@@ -149,7 +145,7 @@ h2 {
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 120px;
-  max-width: 160px;
+
   flex: 1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-overflow: ellipsis;

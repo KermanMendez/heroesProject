@@ -1,7 +1,3 @@
-<header>
-    <h1>Heroes Page: Select your heroes!</h1>
-</header>
-
 <main>
     <section class="all-heroes-section">
         <h2>My Heroes</h2>
@@ -17,9 +13,58 @@
         </div>
         
         <div class="actions">
-            <button class="back-btn" (click)="goToHome()">
+            <a routerLink="/home" class="back-btn">
                 ← Back to Home
+            </a>
+            <button class="add-btn" (click)="addHero()">
+                + Add a Hero
             </button>
         </div>
     </section>
+
+
+    <div class="popup-overlay" *ngIf="showPopup" (click)="closePopup()">
+        <div class="popup-content" (click)="$event.stopPropagation()">
+            <div class="popup-header">
+                <h3>Add New Hero</h3>
+                <button class="close-btn" (click)="closePopup()">×</button>
+            </div>
+            
+            <form [formGroup]="heroForm" (ngSubmit)="onSubmitHero()">
+                <div class="form-group">
+                    <label for="heroName">Hero Name:</label>
+                    <input 
+                        id="heroName"
+                        type="text" 
+                        formControlName="name"
+                        placeholder="Enter hero name"
+                        [class.error]="heroForm.get('name')?.invalid && heroForm.get('name')?.touched">
+                    <label for="heroNickname">Hero Nickname:</label>
+                    <input 
+                        id="heroNickname"
+                        type="text" 
+                        formControlName="nickname"
+                        placeholder="Enter hero nickname"
+                        [class.error]="heroForm.get('nickname')?.invalid && heroForm.get('nickname')?.touched">
+                    <label for="heroPower">Hero Power:</label>
+                    <input 
+                        id="heroPower"
+                        type="text" 
+                        formControlName="power"
+                        placeholder="Enter hero power"
+                        [class.error]="heroForm.get('power')?.invalid && heroForm.get('power')?.touched">
+
+                    <div class="error-messages" *ngIf="heroForm.get('name')?.invalid && heroForm.get('name')?.touched">
+                        <small *ngIf="heroForm.get('name')?.errors?.['required']">Hero name is required</small>
+                        <small *ngIf="heroForm.get('name')?.errors?.['minlength']">Hero name must be at least 2 characters</small>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" (click)="closePopup()">Cancel</button>
+                    <button type="submit" class="submit-btn" [disabled]="heroForm.invalid">Add Hero</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </main>

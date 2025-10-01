@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Hero, HeroSelection } from '../hero';
 
@@ -15,7 +15,7 @@ interface TeamInfo {
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -31,11 +31,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // Cargar héroes seleccionados del sessionStorage
+    // TODO: arreglar problemas de persistencia
     HeroSelection.loadFromSession();
     this.refreshHeroes();
     this.loadTeamInfo();
   }
 
+  // Actualiza la lista de héroes seleccionados, PERO PUEDE NO SER NECESARIO
   refreshHeroes(): void {
     this.topHeroes = [...HeroSelection.selectedHeroes];
     this.cdr.detectChanges();
@@ -62,11 +64,8 @@ export class HomeComponent implements OnInit {
     return HeroSelection.getTop4();
   }
 
+  // SE DEBE HACER CON ROUTERLINK EN EL HTML (POR CONVENCIÓN Y POR SEO)
   goToHeroDetail(heroId: number): void {
     this.router.navigate(['/hero', heroId]);
-  }
-
-  goToHeroesPage(): void {
-    this.router.navigate(['/heroes']);
   }
 }
